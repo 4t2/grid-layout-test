@@ -1,0 +1,81 @@
+
+#wrapper
+{
+    display: grid;
+    grid-template-rows: 160px 100px 100px 1fr 100px;
+    grid-template-columns: 250px 1fr 320px;
+    grid-template-areas:
+        "header header header"
+        "sidebar breadcrumb breadcrumb"
+        "sidebar content advertising"
+        "sidebar content advertising"
+        "sidebar footer footer";
+    grid-gap: 20px;
+    height: 100vh;
+    background-color: $site-background-color;
+}
+
+@media only screen and (max-width: 1024px)
+{
+    #wrapper
+    {
+        grid-template-areas:
+            "header header header"
+            "sidebar breadcrumb breadcrumb"
+            "sidebar advertising advertising"
+            "sidebar content content"
+            "sidebar footer footer";
+    }
+}
+
+header.header
+{
+//    grid-row: 1 / 1;
+//    grid-column: 1 / 4;
+    grid-area: header;
+    border-bottom: 4px solid $site-separator-color;
+}
+
+aside.sidebar
+{
+//    grid-row: 2 / 5;
+//    grid-column: 1 / 2;
+    grid-area: sidebar;
+//    margin: 20px 10px 20px 0;
+    border-right: 2px solid $site-separator-color;
+}
+
+section.breadcrumb
+{
+//    grid-row: 2 / 3;
+//    grid-column: 2 /4;
+    grid-area: breadcrumb;
+//    margin: 0 20px 10px 10px;
+    border-bottom: 2px solid $site-separator-color;
+}
+
+div.advertising
+{
+//    grid-row: 3 / 4;
+//    grid-column: 3 / 4;
+    grid-area: advertising;
+//    margin: 10px;
+    background-color: #e0e0e0;
+}
+
+section.content
+{
+//    grid-row: 3 / 4;
+//    grid-column: 2 / 3;
+    grid-area: content;
+//    margin: 10px 10px 10px 10px;
+}
+
+footer.footer
+{
+//    grid-row: 4 / 5;
+//    grid-column: 2 / 4;
+    grid-area: footer;
+//    margin: 10px;
+    border-top: 2px solid $site-separator-color;
+}
